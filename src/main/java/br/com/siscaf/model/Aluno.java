@@ -13,6 +13,10 @@ public class Aluno {
 
 	private String name;
 	private String cpf;
+
+	public int getId() {
+		return id;
+	}
 	
 	public String getName() {
 		return name;

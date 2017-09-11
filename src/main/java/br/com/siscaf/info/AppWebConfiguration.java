@@ -9,10 +9,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.siscaf.controller.HomeController;
 import br.com.siscaf.dao.AlunoDAO;
+import br.com.siscaf.facade.AlunoFacade;
 
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, AlunoDAO.class})
+@ComponentScan(basePackageClasses={HomeController.class, AlunoDAO.class, AlunoFacade.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	
 	 @Bean
