@@ -1,5 +1,7 @@
 package br.com.siscaf.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,13 +25,17 @@ public class HomeController {
 	@RequestMapping("/add")
 	public String add(Aluno aluno) {
 		dao.gravar(aluno);
-		return "";
+		return "redirect:listar";
 	}
 	
-//	@RequestMapping("/")
-//	public ModelAndView listar() {
-//		
-//	}
+	@RequestMapping("/listar")
+	public ModelAndView listar() {
+		List listar = dao.listar();
+		System.out.println("HomeController.listar()");
+		ModelAndView modelAndView = new ModelAndView("todos");
+		modelAndView.addObject("lista", listar);		
+		return modelAndView;
+	}
 	
 
 }

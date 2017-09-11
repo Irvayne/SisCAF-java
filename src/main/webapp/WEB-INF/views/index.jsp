@@ -9,7 +9,7 @@
 <body>
 	<form action="/siscaf/add" method="post">
 		<h3>nome</h3>
-		<input name="nome" >
+		<input name="name" >
 		<h3>cpf</h3>
 		<label title="cpf"></label>
 		<input name="cpf" >
