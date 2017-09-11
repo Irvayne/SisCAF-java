@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
   <head>
 
     <meta charset="utf-8">
@@ -32,8 +32,69 @@
     <div class="content-wrapper">
 
       <div class="container-fluid">
+      
 
-    <div>bem vindo</div>
+		
+      
+    
+<div class="table-responsive">
+
+
+  <!-- Example Tables Card -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-table"></i>
+            Alunos Cadastrados
+            <a   href="cadastrarAluno" style="float: right;" class="btn btn-primary" >+ Cadastrar</a>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+                <thead>
+                  <tr>
+                   	<th>Nome</th>
+					<th>CPF</th>
+					<th>RG</th>
+					<th>Endereco</th>
+					<th>Email</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Nome</th>
+					<th>CPF</th>
+					<th>RG</th>
+					<th>Endereco</th>
+					<th>Email</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+            			<c:forEach items="${lista}" var="var">
+							<tr>
+								<td>${var.nome}</td>
+								<td>${var.cpf}</td>
+								<td>${var.rg}</td>
+								<td>${var.endereco}</td>
+								<td>${var.email}</td>
+				
+							</tr>
+					</c:forEach>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">
+           
+          </div>
+        </div>
+
+
+
+
+
+
+    
+	</div>
 
 
       </div>

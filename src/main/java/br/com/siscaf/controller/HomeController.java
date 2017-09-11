@@ -22,6 +22,7 @@ public class HomeController {
 		return "index";
 	}
 	
+	
 	@RequestMapping("/add")
 	public String add(Aluno aluno) {
 		facada.salvar(aluno);

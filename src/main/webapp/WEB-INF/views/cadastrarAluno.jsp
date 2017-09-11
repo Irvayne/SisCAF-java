@@ -33,7 +33,61 @@
 
       <div class="container-fluid">
 
-    <div>bem vindo</div>
+    	<div class="card-header">
+          Cadastrar Aluno
+        </div>
+        <div class="card-body">
+          <form action="cadastrarAluno" method="post">
+            <div class="form-group">           
+                  <label  for="inputNome">Nome Completo</label>
+                  <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
+              </div>
+        	
+        	
+        	
+        	<div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="inputCPF">CPF</label>
+                  <input name="cpf" type="number" class="form-control" id="inputCPF" placeholder="Digite o CPF">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputRG">RG</label>
+                  <input name="rg" type="number" class="form-control" id="inputRG" placeholder="Digite o RG">
+                </div>
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="exampleInputEmail1">Endereço</label>
+              <input name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            
+           <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
+            </div>
+            
+         
+            
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="inputSenha">Password</label>
+                  <input name="senha" type="password" class="form-control" id="inputSenha" placeholder="Password">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputSenha1">Confirm password</label>
+                  <input type="password" class="form-control" id="inputSenha1" placeholder="Confirmar password">
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" >Cadastrar</button>
+          
+          </form>
+
+       
+</div>
 
 
       </div>

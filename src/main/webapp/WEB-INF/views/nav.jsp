@@ -12,9 +12,36 @@
               <span class="nav-link-text">
                 Dashboard</span>
             </a>
+            
           </li>
        
-         
+            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link" href="listarAluno">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">
+                Aluno</span>
+            </a>
+            
+          </li>
+             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link" href="#">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">
+                Professor</span>
+            </a>
+            
+          </li>
+          
+             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link" href="#">
+              <i class="fa fa-fw fa-dashboard"></i>
+              <span class="nav-link-text">
+                Turma</span>
+            </a>
+            
+          </li>
+          
+          
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
               <i class="fa fa-fw fa-book"></i>
@@ -23,7 +50,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                <a href="cadastroAluno">Cadastrar Aluno</a>
+                <a href="cadastrarAluno">Cadastrar Aluno</a>
               </li>
               <li>
                 <a href="#">Cadastrar Professor</a>
