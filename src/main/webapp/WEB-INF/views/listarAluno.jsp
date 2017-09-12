@@ -52,9 +52,9 @@
             
               	<i class="fa fa-fw fa-plus">
               	</i>
-              		<span class="nav-link-text">
+              	
                			 Cadastro
-               		</span>
+               	
 
             </a>
             
@@ -91,7 +91,25 @@
 								<td>${var.rg}</td>
 								<td>${var.endereco}</td>
 								<td>${var.email}</td>
-								<td>${var.email}</td>
+								<td>  
+									<a   id="remove" href="cadastrarAluno"  class="btn btn-danger">
+              							<i class="fa fa-fw fa-remove">
+              							</i>
+               			 					deletar
+            						</a>
+            						<a   id="editar" href="cadastrarAluno"  class="btn btn-primary">
+              							<i class="fa fa-fw fa-edit">
+              							</i>
+               			 					Editar
+            						</a>
+            						<a   id="associar" href="cadastrarAluno"    class="btn btn-info">
+              							<i class="fa fa-fw fa-link">
+              							</i>
+               			 					Associar
+            						</a>
+            						
+            					</td>
+            					
 				
 							</tr>
 					</c:forEach>
@@ -157,6 +175,75 @@
 
     <!-- Custom scripts for this template -->
     <script src="resources/js/sb-admin.min.js"></script>
+    <script language="JavaScript">
+							$(document).ready(function() {
+								var usuario ={};
+								$('#deletar').click(function() {
+								
+									usuario['nome'] = document
+									.getElementById('nome').value
+									usuario['senha'] = document
+									.getElementById('senha').value
+									$.ajax({
+										type : 'POST',
+										contentType : 'application/json',
+										url : '/WebService/addUser',
+										data : JSON.stringify(usuario),
+										dataType : 'json',
+										success : function(user) {
+											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
+											
+										}
+									});
+								
+								});
+								
+								
+								$('#editar').click(function() {
+									
+									usuario['nome'] = document
+									.getElementById('nome').value
+									usuario['senha'] = document
+									.getElementById('senha').value
+									$.ajax({
+										type : 'POST',
+										contentType : 'application/json',
+										url : '/WebService/addUser',
+										data : JSON.stringify(usuario),
+										dataType : 'json',
+										success : function(user) {
+											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
+											
+										}
+									});
+								
+								});
+								
+								$('#associar').click(function() {
+									
+									usuario['id'] = document
+									.getElementById('nome').value
+									usuario['senha'] = document
+									.getElementById('senha').value
+									$.ajax({
+										type : 'POST',
+										contentType : 'application/json',
+										url : '/WebService/addUser',
+										data : JSON.stringify(usuario),
+										dataType : 'json',
+										success : function(user) {
+											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
+											
+										}
+									});
+								
+								});
+								
+								
+
+							})
+							</script>
+    
 
   </body>
 
