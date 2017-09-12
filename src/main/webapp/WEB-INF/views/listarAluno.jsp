@@ -45,7 +45,20 @@
           <div class="card-header">
             <i class="fa fa-table"></i>
             Alunos Cadastrados
-            <a   href="cadastrarAluno" style="float: right;" class="btn btn-primary" >+ Cadastrar</a>
+            <div>
+           
+            </div>
+            <a   href="cadastrarAluno" style="float: right;" class="btn btn-primary">
+            
+              	<i class="fa fa-fw fa-plus">
+              	</i>
+              		<span class="nav-link-text">
+               			 Cadastro
+               		</span>
+
+            </a>
+            
+            
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -57,6 +70,7 @@
 					<th>RG</th>
 					<th>Endereco</th>
 					<th>Email</th>
+					<th>Opções</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -66,6 +80,7 @@
 					<th>RG</th>
 					<th>Endereco</th>
 					<th>Email</th>
+					<th>Opções</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -75,6 +90,7 @@
 								<td>${var.cpf}</td>
 								<td>${var.rg}</td>
 								<td>${var.endereco}</td>
+								<td>${var.email}</td>
 								<td>${var.email}</td>
 				
 							</tr>

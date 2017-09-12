@@ -57,6 +57,7 @@
 					<th>RG</th>
 					<th>Endereco</th>
 					<th>Email</th>
+					<th>Opcões</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -66,6 +67,7 @@
 					<th>RG</th>
 					<th>Endereco</th>
 					<th>Email</th>
+					<th>Opcões</th>
                   </tr>
                 </tfoot>
                 <tbody>
