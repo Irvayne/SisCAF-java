@@ -39,10 +39,17 @@ public class AlunoController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "/aluno/editar", method = RequestMethod.GET)
+	public String editarAluno() {		
+		return "aluno/editar";
+	}
+	
 	@RequestMapping(value = "/aluno/{id}/editar", method = RequestMethod.GET)
-	public String editarAluno(@PathVariable("id") Long id) {
+	public ModelAndView editarAluno(@PathVariable("id") Long id) {
 		Aluno aluno = facade.buscarPorId(id);
+		ModelAndView modelAndView = new ModelAndView("redirect:../../aluno/editar");
+		modelAndView.addObject("aluno", aluno);
 		System.out.println(aluno);
-		return "aluno/cadastrar";
+		return modelAndView;
 	}
 }
