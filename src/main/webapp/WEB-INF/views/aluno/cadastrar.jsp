@@ -27,17 +27,17 @@
 
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-  <jsp:include page="nav.jsp"/>
+  <jsp:include page="../nav.jsp"/>
 	
     <div class="content-wrapper">
 
       <div class="container-fluid">
 
     	<div class="card-header">
-          Cadastrar Professor
+          Cadastrar Aluno
         </div>
         <div class="card-body">
-          <form action="cadastrarProfessor" method="post">
+          <form action="aluno/cadastrar" method="post">
             <div class="form-group">           
                   <label  for="inputNome">Nome Completo</label>
                   <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
@@ -97,7 +97,7 @@
     <!-- /.content-wrapper -->
 
 
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
    
 
     <!-- Logout Modal -->

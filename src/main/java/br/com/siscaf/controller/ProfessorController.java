@@ -17,23 +17,23 @@ public class ProfessorController {
 	@Autowired
 	private ProfessorFacade facade;
 	
-	@RequestMapping(value = "/cadastrarProfessor", method = RequestMethod.POST)
+	@RequestMapping(value = "/professor/cadastrar", method = RequestMethod.POST)
 	public String cadastrarProfessor(Professor professor) {
 		facade.salvar(professor);
-		return "redirect:listarProfessor";
+		return "redirect:professor/listar";
 		
 	}
 	
-	@RequestMapping(value = "/cadastrarProfessor", method = RequestMethod.GET)
+	@RequestMapping(value = "/professor/cadastrar", method = RequestMethod.GET)
 	public String cadastrarProfessor() {
 
-		return "cadastrarProfessor";
+		return "professor/cadastrar";
 	}
 
-	@RequestMapping(value = "/listarProfessor", method = RequestMethod.GET)
+	@RequestMapping(value = "/professor/listar", method = RequestMethod.GET)
 	public ModelAndView listarProfessor() {
 		List listar = facade.listarTodos();
-		ModelAndView modelAndView = new ModelAndView("listarProfessor");
+		ModelAndView modelAndView = new ModelAndView("professor/listar");
 		modelAndView.addObject("lista", listar);		
 		return modelAndView;
 	}

@@ -16,7 +16,7 @@
           </li>
        
             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="listarAluno">
+            <a class="nav-link" href="aluno/listar">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
                 Aluno</span>
@@ -24,7 +24,7 @@
             
           </li>
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="listarProfessor">
+            <a class="nav-link" href="professor/listar">
               <i class="fa fa-fw fa-dashboard"></i>
               <span class="nav-link-text">
                 Professor</span>

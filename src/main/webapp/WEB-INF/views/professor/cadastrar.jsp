@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
   <head>
 
     <meta charset="utf-8">
@@ -27,76 +27,67 @@
 
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-  <jsp:include page="nav.jsp"/>
+  <jsp:include page="../nav.jsp"/>
 	
     <div class="content-wrapper">
 
       <div class="container-fluid">
-      
 
-		
-      
-    
-<div class="table-responsive">
-
-
-  <!-- Example Tables Card -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-table"></i>
-            Professores Cadastrados
-            <a   href="cadastrarProfessor" style="float: right;" class="btn btn-primary" >+ Cadastrar</a>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
-                <thead>
-                  <tr>
-                   	<th>Nome</th>
-					<th>CPF</th>
-					<th>RG</th>
-					<th>Endereco</th>
-					<th>Email</th>
-					<th>Opcões</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>Nome</th>
-					<th>CPF</th>
-					<th>RG</th>
-					<th>Endereco</th>
-					<th>Email</th>
-					<th>Opcões</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-            			<c:forEach items="${lista}" var="var">
-							<tr>
-								<td>${var.nome}</td>
-								<td>${var.cpf}</td>
-								<td>${var.rg}</td>
-								<td>${var.endereco}</td>
-								<td>${var.email}</td>
-				
-							</tr>
-					</c:forEach>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">
-           
-          </div>
+    	<div class="card-header">
+          Cadastrar Professor
         </div>
+        <div class="card-body">
+          <form action="professor/cadastrar" method="post">
+            <div class="form-group">           
+                  <label  for="inputNome">Nome Completo</label>
+                  <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
+              </div>
+        	
+        	
+        	
+        	<div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="inputCPF">CPF</label>
+                  <input name="cpf" type="number" class="form-control" id="inputCPF" placeholder="Digite o CPF">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputRG">RG</label>
+                  <input name="rg" type="number" class="form-control" id="inputRG" placeholder="Digite o RG">
+                </div>
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="exampleInputEmail1">Endereço</label>
+              <input name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            
+           <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
+            </div>
+            
+         
+            
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="inputSenha">Password</label>
+                  <input name="senha" type="password" class="form-control" id="inputSenha" placeholder="Password">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputSenha1">Confirm password</label>
+                  <input type="password" class="form-control" id="inputSenha1" placeholder="Confirmar password">
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" >Cadastrar</button>
+          
+          </form>
 
-
-
-
-
-
-    
-	</div>
+       
+</div>
 
 
       </div>
@@ -106,7 +97,7 @@
     <!-- /.content-wrapper -->
 
 
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
    
 
     <!-- Logout Modal -->

@@ -17,23 +17,23 @@ public class AlunoController {
 	@Autowired
 	private AlunoFacade facade;
 	
-	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.POST)
+	@RequestMapping(value = "/aluno/cadastrar", method = RequestMethod.POST)
 	public String cadastrarAluno(Aluno aluno) {
 		facade.salvar(aluno);
-		return "redirect:listarAluno";
+		return "redirect:aluno/listar";
 		
 	}
 	
-	@RequestMapping(value = "/cadastrarAluno", method = RequestMethod.GET)
+	@RequestMapping(value = "/aluno/cadastrar", method = RequestMethod.GET)
 	public String cadastrarAluno() {
 
-		return "cadastrarAluno";
+		return "aluno/cadastrar";
 	}
 
-	@RequestMapping(value = "/listarAluno", method = RequestMethod.GET)
+	@RequestMapping(value = "/aluno/listar", method = RequestMethod.GET)
 	public ModelAndView listarAluno() {
 		List listar = facade.listarTodos();
-		ModelAndView modelAndView = new ModelAndView("listarAluno");
+		ModelAndView modelAndView = new ModelAndView("aluno/listar");
 		modelAndView.addObject("lista", listar);		
 		return modelAndView;
 	}

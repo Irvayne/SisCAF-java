@@ -27,7 +27,7 @@
 
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-  <jsp:include page="nav.jsp"/>
+  <jsp:include page="../nav.jsp"/>
 	
     <div class="content-wrapper">
 
@@ -44,21 +44,8 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fa fa-table"></i>
-            Alunos Cadastrados
-            <div>
-           
-            </div>
-            <a   href="cadastrarAluno" style="float: right;" class="btn btn-primary">
-            
-              	<i class="fa fa-fw fa-plus">
-              	</i>
-              	
-               			 Cadastro
-               	
-
-            </a>
-            
-            
+            Professores Cadastrados
+            <a   href="cadastrar" style="float: right;" class="btn btn-primary" >+ Cadastrar</a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -70,7 +57,7 @@
 					<th>RG</th>
 					<th>Endereco</th>
 					<th>Email</th>
-					<th>Opções</th>
+					<th>Opcões</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -80,7 +67,7 @@
 					<th>RG</th>
 					<th>Endereco</th>
 					<th>Email</th>
-					<th>Opções</th>
+					<th>Opcões</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -91,25 +78,6 @@
 								<td>${var.rg}</td>
 								<td>${var.endereco}</td>
 								<td>${var.email}</td>
-								<td>  
-									<a   id="remove" href="cadastrarAluno"  class="btn btn-danger">
-              							<i class="fa fa-fw fa-remove">
-              							</i>
-               			 					deletar
-            						</a>
-            						<a   id="editar" href="cadastrarAluno"  class="btn btn-primary">
-              							<i class="fa fa-fw fa-edit">
-              							</i>
-               			 					Editar
-            						</a>
-            						<a   id="associar" href="cadastrarAluno"    class="btn btn-info">
-              							<i class="fa fa-fw fa-link">
-              							</i>
-               			 					Associar
-            						</a>
-            						
-            					</td>
-            					
 				
 							</tr>
 					</c:forEach>
@@ -138,7 +106,7 @@
     <!-- /.content-wrapper -->
 
 
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="../footer.jsp"/>
    
 
     <!-- Logout Modal -->
@@ -175,75 +143,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="resources/js/sb-admin.min.js"></script>
-    <script language="JavaScript">
-							$(document).ready(function() {
-								var usuario ={};
-								$('#deletar').click(function() {
-								
-									usuario['nome'] = document
-									.getElementById('nome').value
-									usuario['senha'] = document
-									.getElementById('senha').value
-									$.ajax({
-										type : 'POST',
-										contentType : 'application/json',
-										url : '/WebService/addUser',
-										data : JSON.stringify(usuario),
-										dataType : 'json',
-										success : function(user) {
-											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
-											
-										}
-									});
-								
-								});
-								
-								
-								$('#editar').click(function() {
-									
-									usuario['nome'] = document
-									.getElementById('nome').value
-									usuario['senha'] = document
-									.getElementById('senha').value
-									$.ajax({
-										type : 'POST',
-										contentType : 'application/json',
-										url : '/WebService/addUser',
-										data : JSON.stringify(usuario),
-										dataType : 'json',
-										success : function(user) {
-											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
-											
-										}
-									});
-								
-								});
-								
-								$('#associar').click(function() {
-									
-									usuario['id'] = document
-									.getElementById('nome').value
-									usuario['senha'] = document
-									.getElementById('senha').value
-									$.ajax({
-										type : 'POST',
-										contentType : 'application/json',
-										url : '/WebService/addUser',
-										data : JSON.stringify(usuario),
-										dataType : 'json',
-										success : function(user) {
-											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
-											
-										}
-									});
-								
-								});
-								
-								
-
-							})
-							</script>
-    
 
   </body>
 
