@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Aluno {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
 	private String nome;
 	private String rg;
@@ -18,6 +18,12 @@ public class Aluno {
 	private String email;
 	
 	
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", endereco=" + endereco
+				+ ", email=" + email + ", senha=" + senha + "]";
+	}
+
 	public String getRg() {
 		return rg;
 	}
@@ -50,7 +56,7 @@ public class Aluno {
 		this.senha = senha;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -59,7 +65,7 @@ public class Aluno {
 	}
 	private String senha;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	

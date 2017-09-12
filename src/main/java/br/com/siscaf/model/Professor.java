@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Professor {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
 	private String nome;
 	private String rg;
@@ -50,7 +50,7 @@ public class Professor {
 		this.senha = senha;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -59,7 +59,7 @@ public class Professor {
 	}
 	private String senha;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	

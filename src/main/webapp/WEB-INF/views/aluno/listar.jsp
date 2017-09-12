@@ -94,7 +94,7 @@
 											<td ><a id="deletar" href=""
 												class="btn btn-danger"> <i class="fa fa-fw fa-remove">
 												</i> deletar
-											</a> <a id="editar" href="" class="btn btn-primary">
+											</a> <a id="editar"  href="/siscaf/aluno/${var.id}/editar"  class="btn btn-primary">
 													<i class="fa fa-fw fa-edit"> </i> Editar
 											</a> </td>
 

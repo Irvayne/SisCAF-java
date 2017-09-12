@@ -28,7 +28,7 @@ public class GenericDAO<T> {
 		return em.merge(object);
 	}
 	
-	public T buscarPorId(int id) {
+	public T buscarPorId(Long id) {
 		return em.find(classe, id);
 	}
 	

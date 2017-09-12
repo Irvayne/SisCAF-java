@@ -25,4 +25,8 @@ public class AlunoFacade {
 	public Aluno buscarPorId(Aluno aluno) {
 		return dao.buscarPorId(aluno.getId());
 	}
+	
+	public Aluno buscarPorId(Long id) {
+		return dao.buscarPorId(id);
+	}
 }
