@@ -13,19 +13,19 @@
 <title>SB Admin - Start Bootstrap Template</title>
 
 <!-- Bootstrap core CSS -->
-<link href="resources/vendor/bootstrap/css/bootstrap.min.css"
+<link href="../resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- Custom fonts for this template -->
-<link href="resources/vendor/font-awesome/css/font-awesome.min.css"
+<link href="../resources/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
 <!-- Plugin CSS -->
-<link href="resources/vendor/datatables/dataTables.bootstrap4.css"
+<link href="../resources/vendor/datatables/dataTables.bootstrap4.css"
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="resources/css/sb-admin.css" rel="stylesheet">
+<link href="../resources/css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -86,19 +86,17 @@
 								<tbody>
 									<c:forEach items="${lista}" var="var">
 										<tr>
-											<td>${var.nome}</td>
+											<td >${var.nome}</td>
 											<td>${var.cpf}</td>
 											<td>${var.rg}</td>
 											<td>${var.endereco}</td>
 											<td>${var.email}</td>
-											<td><a id="remove" href=""
+											<td ><a id="deletar" href=""
 												class="btn btn-danger"> <i class="fa fa-fw fa-remove">
 												</i> deletar
 											</a> <a id="editar" href="" class="btn btn-primary">
 													<i class="fa fa-fw fa-edit"> </i> Editar
-											</a> <a id="associar" href="" class="btn btn-info">
-													<i class="fa fa-fw fa-link"> </i> Associar
-											</a></td>
+											</a> </td>
 
 
 										</tr>
@@ -153,86 +151,19 @@
 	</div>
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/popper/popper.min.js"></script>
-	<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../resources/vendor/jquery/jquery.min.js"></script>
+	<script src="../resources/vendor/popper/popper.min.js"></script>
+	<script src="../resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Plugin JavaScript -->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script src="resources/vendor/chart.js/Chart.min.js"></script>
-	<script src="resources/vendor/datatables/jquery.dataTables.js"></script>
-	<script src="resources/vendor/datatables/dataTables.bootstrap4.js"></script>
+	<script src="../resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="../resources/vendor/chart.js/Chart.min.js"></script>
+	<script src="../resources/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="../resources/vendor/datatables/dataTables.bootstrap4.js"></script>
 
 	<!-- Custom scripts for this template -->
-	<script src="resources/js/sb-admin.min.js"></script>
-	<script language="JavaScript">
-							$(document).ready(function() {
-								var usuario ={};
-								$('#deletar').click(function() {
-								
-									usuario['nome'] = document
-									.getElementById('nome').value
-									usuario['senha'] = document
-									.getElementById('senha').value
-									$.ajax({
-										type : 'POST',
-										contentType : 'application/json',
-										url : '/WebService/addUser',
-										data : JSON.stringify(usuario),
-										dataType : 'json',
-										success : function(user) {
-											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
-											
-										}
-									});
-								
-								});
-								
-								
-								$('#editar').click(function() {
-									
-									usuario['nome'] = document
-									.getElementById('nome').value
-									usuario['senha'] = document
-									.getElementById('senha').value
-									$.ajax({
-										type : 'POST',
-										contentType : 'application/json',
-										url : '/WebService/addUser',
-										data : JSON.stringify(usuario),
-										dataType : 'json',
-										success : function(user) {
-											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
-											
-										}
-									});
-								
-								});
-								
-								$('#associar').click(function() {
-									
-									usuario['id'] = document
-									.getElementById('nome').value
-									usuario['senha'] = document
-									.getElementById('senha').value
-									$.ajax({
-										type : 'POST',
-										contentType : 'application/json',
-										url : '/WebService/addUser',
-										data : JSON.stringify(usuario),
-										dataType : 'json',
-										success : function(user) {
-											alert("Usuario "+user.nome+ " cadastrado com sucesso ");
-											
-										}
-									});
-								
-								});
-								
-								
+	<script src="../resources/js/sb-admin.min.js"></script>
 
-							})
-							</script>
 
 
 </body>

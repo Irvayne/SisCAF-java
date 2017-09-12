@@ -12,16 +12,16 @@
     <title>SB Admin - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="resources/css/sb-admin.css" rel="stylesheet">
+    <link href="../resources/css/sb-admin.css" rel="stylesheet">
 
   </head>
 
@@ -131,18 +131,18 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="resources/vendor/jquery/jquery.min.js"></script>
-    <script src="resources/vendor/popper/popper.min.js"></script>
-    <script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resources/vendor/jquery/jquery.min.js"></script>
+    <script src="../resources/vendor/popper/popper.min.js"></script>
+    <script src="../resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="resources/vendor/chart.js/Chart.min.js"></script>
-    <script src="resources/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="resources/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="../resources/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../resources/vendor/datatables/dataTables.bootstrap4.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="resources/js/sb-admin.min.js"></script>
+    <script src="../resources/js/sb-admin.min.js"></script>
 
   </body>
 

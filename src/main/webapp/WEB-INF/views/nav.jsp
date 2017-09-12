@@ -17,7 +17,7 @@
        
             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
             <a class="nav-link" href="aluno/listar">
-              <i class="fa fa-fw fa-dashboard"></i>
+              <i class="fa fa-fw fa-pencil-square"></i>
               <span class="nav-link-text">
                 Aluno</span>
             </a>
@@ -25,7 +25,7 @@
           </li>
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
             <a class="nav-link" href="professor/listar">
-              <i class="fa fa-fw fa-dashboard"></i>
+              <i class="fa fa-fw fa-suitcase"></i>
               <span class="nav-link-text">
                 Professor</span>
             </a>
@@ -34,7 +34,7 @@
           
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
             <a class="nav-link" href="#">
-              <i class="fa fa-fw fa-dashboard"></i>
+              <i class="fa fa-fw fa-book"></i>
               <span class="nav-link-text">
                 Turma</span>
             </a>
