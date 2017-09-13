@@ -17,7 +17,9 @@
 
     <!-- Custom fonts for this template -->
     <link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
     <!-- Plugin CSS -->
     <link href="../resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
@@ -163,12 +165,12 @@
 							$(document).ready(function() {
 								
 								   $("#adicionar").click(function adcionarAlunos() {
-										alert("oi")
-									   $.ajax({
 										
+									   $.ajax({
+			
 										   type : 'POST',
 											contentType : 'application/json',
-											url : '/turma/listarAluno',
+											url : '/siscaf/turma/listarAluno',
 											dataType : 'json',
 											success : function(alunos) {
 												var element = document.getElementById('tabela-corpo');
