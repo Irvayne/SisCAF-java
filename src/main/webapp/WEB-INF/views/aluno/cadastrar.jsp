@@ -37,7 +37,7 @@
           Cadastrar Aluno
         </div>
         <div class="card-body">
-          <form action="aluno/cadastrar" method="post">
+          <form action="/siscaf/aluno/cadastrar" method="post">
             <div class="form-group">           
                   <label  for="inputNome">Nome Completo</label>
                   <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           

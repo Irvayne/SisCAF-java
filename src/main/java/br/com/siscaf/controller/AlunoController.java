@@ -21,33 +21,35 @@ public class AlunoController {
 	@RequestMapping(value = "/aluno/cadastrar", method = RequestMethod.POST)
 	public String cadastrarAluno(Aluno aluno) {
 		facade.salvar(aluno);
-		return "redirect:aluno/listar";
+		return "redirect:/aluno/listar";
 		
 	}
 	
 	@RequestMapping(value = "/aluno/cadastrar", method = RequestMethod.GET)
 	public String cadastrarAluno() {
 
-		return "aluno/cadastrar";
+		return "/aluno/cadastrar";
 	}
 
 	@RequestMapping(value = "/aluno/listar", method = RequestMethod.GET)
 	public ModelAndView listarAluno() {
 		List listar = facade.listarTodos();
-		ModelAndView modelAndView = new ModelAndView("aluno/listar");
+		ModelAndView modelAndView = new ModelAndView("/aluno/listar");
 		modelAndView.addObject("lista", listar);		
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/aluno/editar", method = RequestMethod.GET)
-	public String editarAluno() {		
-		return "aluno/editar";
+	@RequestMapping(value = "/aluno/editar", method = RequestMethod.POST)
+	public String editarAluno(Aluno aluno) {	
+		System.out.println(aluno);
+		facade.salvar(aluno);
+		return "redirect:/aluno/listar";
 	}
 	
 	@RequestMapping(value = "/aluno/{id}/editar", method = RequestMethod.GET)
 	public ModelAndView editarAluno(@PathVariable("id") Long id) {
 		Aluno aluno = facade.buscarPorId(id);
-		ModelAndView modelAndView = new ModelAndView("redirect:../../aluno/editar");
+		ModelAndView modelAndView = new ModelAndView("/aluno/editar");
 		modelAndView.addObject("aluno", aluno);
 		System.out.println(aluno);
 		return modelAndView;

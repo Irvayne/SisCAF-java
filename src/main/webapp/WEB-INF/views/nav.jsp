@@ -16,7 +16,7 @@
           </li>
        
             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="aluno/listar">
+            <a class="nav-link" href="/siscaf/aluno/listar">
               <i class="fa fa-fw fa-pencil-square"></i>
               <span class="nav-link-text">
                 Aluno</span>
@@ -24,7 +24,7 @@
             
           </li>
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="professor/listar">
+            <a class="nav-link" href="/siscaf/professor/listar">
               <i class="fa fa-fw fa-suitcase"></i>
               <span class="nav-link-text">
                 Professor</span>
