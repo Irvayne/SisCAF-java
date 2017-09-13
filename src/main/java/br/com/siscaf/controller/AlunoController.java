@@ -54,4 +54,30 @@ public class AlunoController {
 		System.out.println(aluno);
 		return modelAndView;
 	}
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value = "/aluno/deletar", method = RequestMethod.POST)
+	public String deletarAluno(Aluno aluno) {	
+		System.out.println(aluno);
+		facade.deletarPorId(aluno.getId());
+		return "redirect:/aluno/listar";
+	}
+	
+	@RequestMapping(value = "/aluno/{id}/deletar", method = RequestMethod.GET)
+	public ModelAndView deletarAluno(@PathVariable("id") Long id) {
+		String msg = "Não foi possivel deletar aluno";
+		if(facade.deletarPorId(id)){
+			msg = "Aluno deletado com sucesso";
+		}
+		ModelAndView modelAndView = new ModelAndView("redirect:/aluno/listar");
+		modelAndView.addObject("msg", msg);
+		
+//		System.out.println(aluno);
+		return modelAndView;
+	}
 }

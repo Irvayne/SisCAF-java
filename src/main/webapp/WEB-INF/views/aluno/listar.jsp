@@ -35,13 +35,12 @@
 
 	<div class="content-wrapper">
 
-		<div class="container-fluid">
-
-
-
-
-
-			<div class="table-responsive">
+		<div   class="container-fluid">
+	<%String msg = request.getParameter( "msg" );
+	session.setAttribute( "msg", msg );
+	%>
+		<div >${msg}</div>
+			
 
 
 				<!-- Example Tables Card -->
@@ -91,7 +90,7 @@
 											<td>${var.rg}</td>
 											<td>${var.endereco}</td>
 											<td>${var.email}</td>
-											<td ><a id="deletar" href=""
+											<td ><a id="deletar" href="/siscaf/aluno/${var.id}/deletar"
 												class="btn btn-danger"> <i class="fa fa-fw fa-remove">
 												</i> deletar
 											</a> <a id="editar"  href="/siscaf/aluno/${var.id}/editar"  class="btn btn-primary">

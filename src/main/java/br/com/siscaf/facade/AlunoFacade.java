@@ -29,4 +29,7 @@ public class AlunoFacade {
 	public Aluno buscarPorId(Long id) {
 		return dao.buscarPorId(id);
 	}
+	public boolean deletarPorId(Long id) {
+		return dao.delete(id);
+	}
 }
