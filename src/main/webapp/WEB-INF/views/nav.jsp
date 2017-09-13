@@ -33,7 +33,7 @@
           </li>
           
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/siscaf/turma/cadastrar">
               <i class="fa fa-fw fa-book"></i>
               <span class="nav-link-text">
                 Turma</span>

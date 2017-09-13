@@ -12,16 +12,16 @@
     <title>SB Admin - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/siscaf/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/siscaf/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="../resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="/siscaf/resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../resources/css/sb-admin.css" rel="stylesheet">
+    <link href="/siscaf/resources/css/sb-admin.css" rel="stylesheet">
 
   </head>
 
@@ -34,64 +34,41 @@
       <div class="container-fluid">
 
     	<div class="card-header">
-          Cadastrar Aluno
+          Editar Aluno
         </div>
         <div class="card-body">
-          <form action="/siscaf/aluno/cadastrar" method="post">
+          <form action="/siscaf/aluno/editar" method="post">
+			
+			<input type="hidden" name="id" value="${aluno.id}">
+          
             <div class="form-group">           
                   <label  for="inputNome">Nome Completo</label>
-                  <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
+                  <input value="${aluno.nome}" name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
               </div>
-              
-         
+        	
+        	
         	
         	<div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
                   <label for="inputCPF">CPF</label>
-                  <input name="cpf" type="number" class="form-control" id="inputCPF" placeholder="Digite o CPF">
+                  <input value="${aluno.cpf}" name="cpf" type="number" class="form-control" id="inputCPF" placeholder="Digite o CPF">
                 </div>
                 <div class="col-md-6">
                   <label for="inputRG">RG</label>
-                  <input name="rg" type="number" class="form-control" id="inputRG" placeholder="Digite o RG">
+                  <input value="${aluno.rg}" name="rg" type="number" class="form-control" id="inputRG" placeholder="Digite o RG">
                 </div>
               </div>
             </div>
-            
-<!--                <div class="form-group"> -->
-<!--             	<div class="form-row"> -->
-<!--             		<div class="col-md-6"> -->
-<!-- 						<label  for="inputCurso">Sexo</label> -->
-<!-- 						<select id="inputSexo" class="form-control"> -->
-<!--  			 				<option>Masculino</option> -->
-<!--   							<option>Feminino</option> -->
-  			
-<!-- 						</select> -->
-<!-- 					</div> -->
-            	
-<!--              		<div class="col-md-6"> -->
-<!--             			<label  for="inputCurso">Curso</label> -->
-<!--         				<select id="inputCurso" class="form-control"> -->
-<!--  			 				<option>Técnico em Mecânica</option> -->
-<!--   							<option>Técnico em Eletrotécnica</option> -->
-  			
-<!-- 						</select> -->
-<!-- 					</div> -->
-					
-		 			
-<!--               </div> -->
-<!-- 			</div> -->
-        	
-        	
         
             <div class="form-group">
               <label for="exampleInputEmail1">Endereço</label>
-              <input name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input value="${aluno.endereco}" name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             
            <div class="form-group">
               <label for="inputEmail">Email address</label>
-              <input name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
+              <input value="${aluno.email}" name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
             </div>
             
          
@@ -100,7 +77,7 @@
               <div class="form-row">
                 <div class="col-md-6">
                   <label for="inputSenha">Password</label>
-                  <input name="senha" type="password" class="form-control" id="inputSenha" placeholder="Password">
+                  <input value="${aluno.senha}" name="senha" type="password" class="form-control" id="inputSenha" placeholder="Password">
                 </div>
                 <div class="col-md-6">
                   <label for="inputSenha1">Confirm password</label>
@@ -108,7 +85,7 @@
                 </div>
               </div>
             </div>
-            <button class="btn btn-primary btn-block" type="submit" >Cadastrar</button>
+            <button class="btn btn-primary btn-block" type="submit" >Salvar</button>
           
           </form>
 
@@ -148,18 +125,18 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../resources/vendor/jquery/jquery.min.js"></script>
-    <script src="../resources/vendor/popper/popper.min.js"></script>
-    <script src="../resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/siscaf/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="/siscaf/resources/vendor/popper/popper.min.js"></script>
+    <script src="/siscaf/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="../resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="../resources/vendor/chart.js/Chart.min.js"></script>
-    <script src="../resources/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="../resources/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="/siscaf/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/siscaf/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/siscaf/resources/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/siscaf/resources/vendor/datatables/dataTables.bootstrap4.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="../resources/js/sb-admin.min.js"></script>
+    <script src="/siscaf/resources/js/sb-admin.min.js"></script>
 
   </body>
 

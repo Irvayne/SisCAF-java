@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
   <head>
 
@@ -37,26 +38,14 @@
           Cadastrar Aluno
         </div>
         <div class="card-body">
-          <form action="/siscaf/aluno/cadastrar" method="post">
+          <form>
             <div class="form-group">           
-                  <label  for="inputNome">Nome Completo</label>
+                  <label  for="inputNome">Nome</label>
                   <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
               </div>
               
          
         	
-        	<div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <label for="inputCPF">CPF</label>
-                  <input name="cpf" type="number" class="form-control" id="inputCPF" placeholder="Digite o CPF">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputRG">RG</label>
-                  <input name="rg" type="number" class="form-control" id="inputRG" placeholder="Digite o RG">
-                </div>
-              </div>
-            </div>
             
 <!--                <div class="form-group"> -->
 <!--             	<div class="form-row"> -->
@@ -82,33 +71,8 @@
 <!--               </div> -->
 <!-- 			</div> -->
         	
-        	
-        
-            <div class="form-group">
-              <label for="exampleInputEmail1">Endereço</label>
-              <input name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            
-           <div class="form-group">
-              <label for="inputEmail">Email address</label>
-              <input name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
-            </div>
-            
-         
-            
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <label for="inputSenha">Password</label>
-                  <input name="senha" type="password" class="form-control" id="inputSenha" placeholder="Password">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputSenha1">Confirm password</label>
-                  <input type="password" class="form-control" id="inputSenha1" placeholder="Confirmar password">
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-primary btn-block" type="submit" >Cadastrar</button>
+        	<button class="btn btn-primary btn-block" type="button" id="adicionar" data-toggle="modal" data-target="#exampleModal" >Adicionar Aluno</button>
+            <button class="btn btn-primary btn-block" type="submit" >Criar turma</button>
           
           </form>
 
@@ -131,17 +95,51 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-table"></i> Alunos Cadastrados</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
+         	<!-- Example Tables Card -->
+				<div class="card mb-3">
+					
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered" width="100%" id="dataTable"
+								cellspacing="0">
+								<thead>
+									<tr>
+										<th>Nome</th>
+										<th>CPF</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<th>Nome</th>
+										<th>CPF</th>
+									</tr>
+								</tfoot>
+								<tbody id="tabela-corpo">
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="card-footer small text-muted"></div>
+				</div>
+				
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="login.html">Logout</a>
+            
+            
+            	
+            
+            
+            
+            
           </div>
         </div>
       </div>
@@ -160,6 +158,48 @@
 
     <!-- Custom scripts for this template -->
     <script src="../resources/js/sb-admin.min.js"></script>
+    
+    <script language="javascript">
+							$(document).ready(function() {
+								
+								   $("#adicionar").click(function adcionarAlunos() {
+										alert("oi")
+									   $.ajax({
+										
+										   type : 'POST',
+											contentType : 'application/json',
+											url : '/turma/listarAluno',
+											dataType : 'json',
+											success : function(alunos) {
+												var element = document.getElementById('tabela-corpo');
+														element.innerHTML = "";
+														for (i = 0; i < alunos.length; i++) {
+
+															element.innerHTML = element.innerHTML
+																	+ '<tr><td>'
+																	+ alunos[i].nome
+																	+ '</td>'
+																	+'<td>'
+																	+ alunos[i].cpf
+																	+'</td>'
+																	+'</tr>';
+																	
+																	
+
+														}
+													
+														
+												
+											}
+										});
+									   
+						                  });  
+									
+								
+							
+
+							})
+							</script>
 
   </body>
 
