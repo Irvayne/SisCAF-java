@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.com.siscaf.facade.AlunoFacade;
+import br.com.siscaf.model.Aluno;
+
 import com.google.gson.Gson;
 
 @Controller
@@ -26,13 +28,13 @@ public class TurmaController {
 	@RequestMapping(value = "/turma/listarAluno", method = RequestMethod.POST)
 	public  String listarAluno() {
 		Gson json = new Gson();
-		List alunos = facade.listarTodos();
+		List<Aluno> alunos = facade.listarTodos();
 		
 		System.out.println(alunos);
-		System.out.println("oi");
 		return json.toJson(alunos);
 		
 	}
+
 	
 
 }

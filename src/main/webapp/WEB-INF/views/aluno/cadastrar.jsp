@@ -58,29 +58,29 @@
               </div>
             </div>
             
-<!--                <div class="form-group"> -->
-<!--             	<div class="form-row"> -->
-<!--             		<div class="col-md-6"> -->
-<!-- 						<label  for="inputCurso">Sexo</label> -->
-<!-- 						<select id="inputSexo" class="form-control"> -->
-<!--  			 				<option>Masculino</option> -->
-<!--   							<option>Feminino</option> -->
+               <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-6">
+						<label  for="inputSexo">Sexo</label>
+						<select id="inputSexo" name="sexo" class="form-control">
+ 			 				<option>Masculino</option>
+  							<option>Feminino</option>
   			
-<!-- 						</select> -->
-<!-- 					</div> -->
+						</select>
+					</div>
             	
-<!--              		<div class="col-md-6"> -->
-<!--             			<label  for="inputCurso">Curso</label> -->
-<!--         				<select id="inputCurso" class="form-control"> -->
-<!--  			 				<option>Técnico em Mecânica</option> -->
-<!--   							<option>Técnico em Eletrotécnica</option> -->
+             		<div class="col-md-6">
+            			<label  for="inputCurso">Curso</label>
+        				<select id="inputCurso" name="curso" class="form-control">
+ 			 				<option>Técnico em Mecânica</option>
+  							<option>Técnico em Eletrotécnica</option>
   			
-<!-- 						</select> -->
-<!-- 					</div> -->
+						</select>
+					</div>
 					
 		 			
-<!--               </div> -->
-<!-- 			</div> -->
+              </div>
+			</div>
         	
         	
         

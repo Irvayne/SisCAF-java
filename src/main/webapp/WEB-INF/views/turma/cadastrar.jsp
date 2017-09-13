@@ -41,37 +41,26 @@
         </div>
         <div class="card-body">
           <form>
-            <div class="form-group">           
-                  <label  for="inputNome">Nome</label>
-                  <input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">           
-              </div>
-              
-         
-        	
-            
-<!--                <div class="form-group"> -->
-<!--             	<div class="form-row"> -->
-<!--             		<div class="col-md-6"> -->
-<!-- 						<label  for="inputCurso">Sexo</label> -->
-<!-- 						<select id="inputSexo" class="form-control"> -->
-<!--  			 				<option>Masculino</option> -->
-<!--   							<option>Feminino</option> -->
-  			
-<!-- 						</select> -->
-<!-- 					</div> -->
+           
+               <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-6">
+						<label  for="inputNome">Nome</label>
+						<input name="nome" type="text" class="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Digite o nome completo">  
+					</div>
             	
-<!--              		<div class="col-md-6"> -->
-<!--             			<label  for="inputCurso">Curso</label> -->
-<!--         				<select id="inputCurso" class="form-control"> -->
-<!--  			 				<option>Técnico em Mecânica</option> -->
-<!--   							<option>Técnico em Eletrotécnica</option> -->
+             		<div class="col-md-6">
+            			<label  for="inputCurso">Curso</label>
+        				<select id="inputCurso" class="form-control">
+ 			 				<option>Técnico em Mecânica</option>
+  							<option>Técnico em Eletrotécnica</option>
   			
-<!-- 						</select> -->
-<!-- 					</div> -->
+						</select>
+					</div>
 					
 		 			
-<!--               </div> -->
-<!-- 			</div> -->
+              </div>
+			</div>
         	
         	<button class="btn btn-primary btn-block" type="button" id="adicionar" data-toggle="modal" data-target="#exampleModal" >Adicionar Aluno</button>
             <button class="btn btn-primary btn-block" type="submit" >Criar turma</button>
@@ -167,7 +156,6 @@
 								   $("#adicionar").click(function adcionarAlunos() {
 										
 									   $.ajax({
-			
 										   type : 'POST',
 											contentType : 'application/json',
 											url : '/siscaf/turma/listarAluno',

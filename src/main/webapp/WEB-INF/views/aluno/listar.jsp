@@ -73,6 +73,8 @@
 										<th>RG</th>
 										<th>Endereco</th>
 										<th>Email</th>
+										<th>Sexo</th>
+										<th>Curso</th>
 										<th>Opções</th>
 									</tr>
 								</thead>
@@ -83,6 +85,8 @@
 										<th>RG</th>
 										<th>Endereco</th>
 										<th>Email</th>
+										<th>Sexo</th>
+										<th>Curso</th>
 										<th>Opções</th>
 									</tr>
 								</tfoot>
@@ -94,11 +98,13 @@
 											<td>${var.rg}</td>
 											<td>${var.endereco}</td>
 											<td>${var.email}</td>
+											<td>${var.sexo}</td>
+											<td>${var.curso}</td>
 											<td ><a id="deletar" href="/siscaf/aluno/${var.id}/deletar"
 												class="btn btn-danger"> <i class="fa fa-fw fa-remove">
-												</i> deletar
+												</i> 
 											</a> <a id="editar"  href="/siscaf/aluno/${var.id}/editar"  class="btn btn-primary">
-													<i class="fa fa-fw fa-edit"> </i> Editar
+													<i class="fa fa-fw fa-edit"> </i> 
 											</a> </td>
 
 
