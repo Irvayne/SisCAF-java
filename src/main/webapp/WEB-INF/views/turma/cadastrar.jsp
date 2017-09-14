@@ -154,13 +154,12 @@
 							$(document).ready(function() {
 								
 								   $("#adicionar").click(function adcionarAlunos() {
-										
+										alert("teste1");
 									   $.ajax({
-										   type : 'POST',
-											contentType : 'application/json',
+										    type : 'POST',
 											url : '/siscaf/turma/listarAluno',
-											dataType : 'json',
 											success : function(alunos) {
+												alert(alunos);
 												var element = document.getElementById('tabela-corpo');
 														element.innerHTML = "";
 														for (i = 0; i < alunos.length; i++) {

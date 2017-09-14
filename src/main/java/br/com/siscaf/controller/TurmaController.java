@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 import br.com.siscaf.facade.AlunoFacade;
 import br.com.siscaf.model.Aluno;
-
-import com.google.gson.Gson;
 
 @Controller
 public class TurmaController {
@@ -24,17 +25,17 @@ public class TurmaController {
 		return "/turma/cadastrar";
 		
 	}
-	
+
+	@ResponseBody
 	@RequestMapping(value = "/turma/listarAluno", method = RequestMethod.POST)
 	public  String listarAluno() {
 		Gson json = new Gson();
 		List<Aluno> alunos = facade.listarTodos();
 		
-		System.out.println(alunos);
-		return json.toJson(alunos);
+		String j = json.toJson(alunos);
+		System.out.println(j);
+		
+		return j;
 		
 	}
-
-	
-
 }
