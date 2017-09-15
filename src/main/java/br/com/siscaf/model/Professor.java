@@ -16,8 +16,34 @@ public class Professor {
 	private String cpf;
 	private String endereco;
 	private String email;
+	private String sexo;
+	private String curso;
 	
 	
+	
+	
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+	@Override
+	public String toString() {
+		return "Professor [id=" + id + ", nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", endereco=" + endereco
+				+ ", email=" + email + ", senha=" + senha + "]";
+	}
+
 	public String getRg() {
 		return rg;
 	}

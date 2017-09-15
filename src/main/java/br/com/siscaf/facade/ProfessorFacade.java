@@ -25,4 +25,11 @@ public class ProfessorFacade {
 	public Professor buscarPorId(Professor professor) {
 		return dao.buscarPorId(professor.getId());
 	}
+	
+	public Professor buscarPorId(Long id) {
+		return dao.buscarPorId(id);
+	}
+	public boolean deletarPorId(Long id) {
+		return dao.delete(id);
+	}
 }
