@@ -86,14 +86,28 @@
         
             <div class="form-group">
               <label for="exampleInputEmail1">Endereço</label>
-              <input name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input name="endereco" type="text" class="form-control" id="exampleInputEmail1"  placeholder="Digite o Endereço">
             </div>
             
            <div class="form-group">
-              <label for="inputEmail">Email address</label>
+              <label for="inputEmail">Email </label>
               <input name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
             </div>
             
+            <div class="form-group">
+	            <div class="form-row">
+	           		 <div class="col-md-6">
+		             
+			              <label for="inputCelular">Celular</label>
+			              <input name="celular" type="text" class="form-control" id="inputCelular"  placeholder="Digite o numero do celular">
+		           </div>
+		           <div class="col-md-6">
+		             
+			              <label for="inputTelefoneFixo">Telefone Fixo</label>
+			              <input name="telefoneFixo" type="text" class="form-control" id="inputTelefoneFixo"  placeholder="Digite o numero do telefone fixo">
+		           </div>
+	            </div>
+            </div>
          
             
             <div class="form-group">

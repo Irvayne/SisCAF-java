@@ -18,10 +18,37 @@ public class Aluno {
 	private String email;
 	private String sexo;
 	private String curso;
+	private String celular;
+	private String telefoneFixo;
+	private String turma = "indefinido";
 	
 	
+
 	
-	
+	public String getTurma() {
+		return turma;
+	}
+
+	public void setTurma(String turma) {
+		this.turma = turma;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	public String getTelefoneFixo() {
+		return telefoneFixo;
+	}
+
+	public void setTelefoneFixo(String telefoneFixo) {
+		this.telefoneFixo = telefoneFixo;
+	}
+
 	public String getSexo() {
 		return sexo;
 	}

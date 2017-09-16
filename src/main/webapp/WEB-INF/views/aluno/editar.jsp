@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
   <head>
 
     <meta charset="utf-8">
@@ -60,15 +60,73 @@
                 </div>
               </div>
             </div>
+            
+              <div class="form-group">
+            	<div class="form-row">
+            		<div class="col-md-6">
+						<label  for="inputSexo">Sexo</label>
+						<select  id="inputSexo" name="sexo" class="form-control">
+							<c:if test="${'Feminino' eq aluno.sexo}">
+								<option>Masculino</option>
+  								<option selected="selected">Feminino</option>
+ 
+							</c:if>
+							<c:if test="${'Masculino' eq aluno.sexo}">
+								<option  selected="selected">Masculino</option>
+  								<option>Feminino</option>
+ 
+							</c:if>
+						
+ 			 				
+  			
+						</select>
+					</div>
+            	
+             		<div class="col-md-6">
+            			<label  for="inputCurso">Curso</label>
+        				<select  id="inputCurso" name="curso" class="form-control">
+        					<c:if test="${'Técnico em Mecânica' eq aluno.curso}">
+								<option selected="selected">Técnico em Mecânica</option>
+  								<option>Técnico em Eletrotécnica</option>
+ 
+							</c:if>
+							<c:if test="${'Técnico em Eletrotécnica' eq aluno.curso}">
+								<option>Técnico em Mecânica</option>
+  								<option  selected="selected"> Técnico em Eletrotécnica</option>
+ 
+							</c:if>
+ 			 				
+  			
+						</select>
+					</div>
+					
+		 			
+              </div>
+			</div>
         
             <div class="form-group">
               <label for="exampleInputEmail1">Endereço</label>
-              <input value="${aluno.endereco}" name="endereco" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input value="${aluno.endereco}" name="endereco" type="text" class="form-control" id="exampleInputEmail1"  placeholder="Digite o endereço">
             </div>
             
            <div class="form-group">
-              <label for="inputEmail">Email address</label>
+              <label for="inputEmail">Email</label>
               <input value="${aluno.email}" name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Digite o email">
+            </div>
+            
+            <div class="form-group">
+	            <div class="form-row">
+	           		 <div class="col-md-6">
+		             
+			              <label for="inputCelular">Celular</label>
+			              <input value="${aluno.celular}" name="celular" type="text" class="form-control" id="inputCelular"  placeholder="Digite o numero do celular">
+		           </div>
+		           <div class="col-md-6">
+		             
+			              <label for="inputTelefoneFixo">Telefone Fixo</label>
+			              <input value="${aluno.telefoneFixo}" name="telefoneFixo" type="text" class="form-control" id="inputTelefoneFixo"  placeholder="Digite o numero do telefone fixo">
+		           </div>
+	            </div>
             </div>
             
          

@@ -14,6 +14,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   
+   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="../resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,6 +35,9 @@
   <jsp:include page="../nav.jsp"/>
 	
     <div class="content-wrapper">
+    <%String alunos = request.getParameter( "alunos" );
+	session.setAttribute( "alunos", alunos );
+	%>
 
       <div class="container-fluid">
 
@@ -82,9 +87,9 @@
    
 
     <!-- Logout Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    <div class="modal fade bs-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content ">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-table"></i> Alunos Cadastrados</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -92,6 +97,7 @@
             </button>
           </div>
           <div class="modal-body">
+          
          	<!-- Example Tables Card -->
 				<div class="card mb-3">
 					
@@ -103,15 +109,34 @@
 									<tr>
 										<th>Nome</th>
 										<th>CPF</th>
+										<th>Matricular</th>
+								
 									</tr>
 								</thead>
 								<tfoot>
 									<tr>
 										<th>Nome</th>
 										<th>CPF</th>
+										<th>Matricular</th>
+								
 									</tr>
 								</tfoot>
 								<tbody id="tabela-corpo">
+									<c:forEach items="${alunos}" var="var">
+										<tr>
+											<td >${var.nome}</td>
+											<td>${var.cpf}</td>
+											<td>
+												
+												<input   type="checkbox" name="turma" data-toggle="toggle"  id="option" > 
+												
+<!-- 											 <a id="editar"  href=""  class="btn btn-primary"> -->
+<!-- 													<i class="fa fa-fw fa-edit"> </i>  -->
+<!-- 											</a> -->
+											</td> 
+
+										</tr>
+									</c:forEach>
 								
 								</tbody>
 							</table>
@@ -122,8 +147,11 @@
 				
           </div>
           <div class="modal-footer">
+          
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <form action="/siscaf/turma/cadastrarAluno" method="post">
+            	<button type="submit" class="btn btn-primary" >Logout</button>
+            </form>
             
             
             	
@@ -147,49 +175,12 @@
     <script src="../resources/vendor/datatables/jquery.dataTables.js"></script>
     <script src="../resources/vendor/datatables/dataTables.bootstrap4.js"></script>
 
+	
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <!-- Custom scripts for this template -->
     <script src="../resources/js/sb-admin.min.js"></script>
     
-    <script language="javascript">
-							$(document).ready(function() {
-								
-								   $("#adicionar").click(function adcionarAlunos() {
-										alert("teste1");
-									   $.ajax({
-										    type : 'POST',
-											url : '/siscaf/turma/listarAluno',
-											success : function(alunos) {
-												alert(alunos);
-												var element = document.getElementById('tabela-corpo');
-														element.innerHTML = "";
-														for (i = 0; i < alunos.length; i++) {
-
-															element.innerHTML = element.innerHTML
-																	+ '<tr><td>'
-																	+ alunos[i].nome
-																	+ '</td>'
-																	+'<td>'
-																	+ alunos[i].cpf
-																	+'</td>'
-																	+'</tr>';
-																	
-																	
-
-														}
-													
-														
-												
-											}
-										});
-									   
-						                  });  
-									
-								
-							
-
-							})
-							</script>
-
+    
   </body>
 
 </html>

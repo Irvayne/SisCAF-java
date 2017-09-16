@@ -39,12 +39,16 @@
 	<%String msg = request.getParameter( "msg" );
 	session.setAttribute( "msg", msg );
 	%>
+	
+	<c:if test="${not empty msg}">
 	<div  id="alert-info" class="alert alert-info" role="alert">${msg}
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
   			<span aria-hidden="true">&times;</span>
 		</button>
 		
 	</div>
+ 
+</c:if>
 
 
 				<!-- Example Tables Card -->
@@ -100,12 +104,34 @@
 											<td>${var.email}</td>
 											<td>${var.sexo}</td>
 											<td>${var.curso}</td>
-											<td ><a id="deletar" href="/siscaf/aluno/${var.id}/deletar"
-												class="btn btn-danger"> <i class="fa fa-fw fa-remove">
+											<td ><a id="deletar" class="btn btn-danger" href="" data-toggle="modal" data-target="#exampleModal" 
+												> <i class="fa fa-fw fa-remove">
 												</i> 
 											</a> <a id="editar"  href="/siscaf/aluno/${var.id}/editar"  class="btn btn-primary">
 													<i class="fa fa-fw fa-edit"> </i> 
 											</a> </td>
+											
+											<!-- Logout Modal -->
+												<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+													aria-labelledby="exampleModalLabel" aria-hidden="true">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="exampleModalLabel">Confirmação de exclusão</h5>
+																<button type="button" class="close" data-dismiss="modal"
+																	aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body">Tem certeza que deseja continuar?</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary"
+																	data-dismiss="modal">Cancel</button>
+																<a class="btn btn-primary" href="/siscaf/aluno/${var.id}/deletar">continuar</a>
+															</div>
+														</div>
+													</div>
+												</div>
 
 
 										</tr>
@@ -135,28 +161,9 @@
 	<jsp:include page="../footer.jsp" />
 
 
-	<!-- Logout Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">Select "Logout" below if you are ready
-					to end your current session.</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	
+	
+
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="../resources/vendor/jquery/jquery.min.js"></script>
@@ -171,16 +178,7 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="../resources/js/sb-admin.min.js"></script>
-	<script type="text/javascript">
-	 $(document).ready (function(){
-//             $("#alert-info").hide();
-            $("#deletar").click(function showAlert() {
-                $("#alert-info").show();
-//                 window.setTimeout(function () { 
-//                             $("#alert-info").alert('close'); }, 200);               
-                  });       
-                    });
-	 </script>
+
 
 
 </body>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
@@ -21,8 +22,13 @@ public class TurmaController {
 	private AlunoFacade facade;
 	
 	@RequestMapping(value = "/turma/cadastrar", method = RequestMethod.GET)
-	public String cadastrarAluno() {
-		return "/turma/cadastrar";
+	public ModelAndView cadastrarAluno() {
+		List alunos = facade.listarTodos();
+		ModelAndView modelAndView = new ModelAndView("/turma/cadastrar");
+		modelAndView.addObject("alunos", alunos);
+//		System.out.println(aluno);
+		return modelAndView;
+//		return "/turma/cadastrar";
 		
 	}
 
@@ -36,6 +42,17 @@ public class TurmaController {
 		System.out.println(j);
 		
 		return j;
+		
+	}
+	
+	@RequestMapping(value = "/turma/cadastrarAluno", method = RequestMethod.POST)
+	public void  cadastrarAluno(List alunos) {
+		
+		System.out.println(alunos);
+	
+	
+		
+
 		
 	}
 }
