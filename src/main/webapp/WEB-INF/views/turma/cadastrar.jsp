@@ -103,6 +103,7 @@
 					
 					<div class="card-body">
 						<div class="table-responsive">
+						<form action="/siscaf/turma/cadastrarAluno" method="post">
 							<table class="table table-bordered" width="100%" id="dataTable"
 								cellspacing="0">
 								<thead>
@@ -122,6 +123,7 @@
 									</tr>
 								</tfoot>
 								<tbody id="tabela-corpo">
+								
 									<c:forEach items="${alunos}" var="var" varStatus="it">
 										<c:set value="${it.count}" var="i" />
 										<input name ="alunos[${i}].cpf" value="${var.cpf}" type="hidden">
@@ -140,7 +142,7 @@
 											<td>${var.cpf}</td>
 											<td>
 												
-												<input   type="checkbox" name ="alunos[${i}].telefoneFixo" data-toggle="toggle"  id="option" > 
+												<input   type="checkbox" name ="estudantes[${i}].turma" data-toggle="toggle"  id="option" > 
 												
 <!-- 											 <a id="editar"  href=""  class="btn btn-primary"> -->
 <!-- 													<i class="fa fa-fw fa-edit"> </i>  -->
@@ -152,6 +154,10 @@
 								
 								</tbody>
 							</table>
+							<div>
+       							 <input class="btn btn-success" type="submit" value="Salvar" />
+   							 </div>
+							</form>
 						</div>
 					</div>
 					<div class="card-footer small text-muted"></div>
