@@ -122,13 +122,25 @@
 									</tr>
 								</tfoot>
 								<tbody id="tabela-corpo">
-									<c:forEach items="${alunos}" var="var">
+									<c:forEach items="${alunos}" var="var" varStatus="it">
+										<c:set value="${it.count}" var="i" />
+										<input name ="alunos[${i}].cpf" value="${var.cpf}" type="hidden">
+										<input name ="alunos[${i}].nome" value="${var.nome}" type="hidden">
+										<input name ="alunos[${i}].rg" value="${var.rg}" type="hidden">
+										<input name ="alunos[${i}].endereco" value="${var.endereco}" type="hidden">
+										<input name ="alunos[${i}].email" value="${var.email}" type="hidden">
+										<input name ="alunos[${i}].sexo" value="${var.sexo}" type="hidden">
+										
+									'	<input name ="alunos[${i}].curso" value="${var.curso}" type="hidden">
+										<input name ="alunos[${i}].celular" value="${var.celular}" type="hidden">
+										<input name ="alunos[${i}].telefoneFixo" value="${var.telefoneFixo}" type="hidden">
 										<tr>
-											<td >${var.nome}</td>
+										
+											<td> ${var.nome}</td>
 											<td>${var.cpf}</td>
 											<td>
 												
-												<input   type="checkbox" name="turma" data-toggle="toggle"  id="option" > 
+												<input   type="checkbox" name ="alunos[${i}].telefoneFixo" data-toggle="toggle"  id="option" > 
 												
 <!-- 											 <a id="editar"  href=""  class="btn btn-primary"> -->
 <!-- 													<i class="fa fa-fw fa-edit"> </i>  -->
